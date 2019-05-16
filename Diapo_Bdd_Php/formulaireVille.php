@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Haeders in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>recherche département</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            <form action="php/gestionVille.php" method="post">
+                <label for="ville">Donnez un nom de ville</label>
+                <input type="text" name="ville" id="ville"/> <br/>
+                <input type="submit"/>
+
+            </form>
+
+            <br/>
+
+            <a href="php/afficheregions.php">afficheregions.php</a> <br/>
+            <a href="php/afficheDepartementsRegions.php">afficheDepartementsRegions.php</a>
+            <br/>
+            <br/>
+            <!-- formulaireNumDepartement -->
+
+            <label for="departement">Donnez un numéro de département</label>
+            <input type="text" name="numDept" id="numDept"/> <br/>
+            <input type="submit"/>
+
+        </form>
+        <!-- formulaireNumDepartement -->
+        <br/>
+        <br/>
+        
+        <form action="php/traitementRegion.php" method="post">
+            <label for="region" id="label-region">Choississez une région</label>
+            <select name="region_id" id="region_id"> 
+                <?php
+                require_once 'php/listeRegions.php';
+                getListRegion();
+                
+                ?>
+            </select>
+            <br/>
+            <input type="submit"/>
+        </form>
+
+    </div>
+</body>
+</html>

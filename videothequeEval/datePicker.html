@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulaire</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <div>Question 11
+            <form action="gestionActeur.php" method="post">
+                 <label for="nomAct">Donner un nom d'acteur</label>
+                <input type="text" name="nomAct" id="nomAct"/> <br/>
+                <input type="submit" value="Envoyer"/>
+            </form>
+       </div>
+        <div>Question 12
+            <form action="traitementGenre.php" method="post">
+                <label>Choisir un genre  </label>
+                <select name="genreFilm" id="genreFilm">
+                    <option> </option>
+
+                    <?php
+                    require './fonctionsVideotheque.inc.php';
+                    getListGenre();
+                    ?>
+                </select>
+                <input type="submit" value="Envoyer"/>
+            </form>
+
+        </div>
+    </body>
+</html>
